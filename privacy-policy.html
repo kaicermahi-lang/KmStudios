@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Kasier Mahamud Showcase</title>
+  <meta name="description" content="Privacy Policy for the Kasier Mahamud Showcase app and website. Learn how we handle your data.">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* ── VARIABLES ── */
+    :root {
+      --bg:    #000000;
+      --s1:    #0a0000;
+      --s2:    #110000;
+      --rd:    #e01010;
+      --rd2:   #c00000;
+      --pr:    #ff2020;
+      --gl:    #ff6b6b;
+      --gr:    #ff4444;
+      --tx:    #f5f5f5;
+      --mt:    #888888;
+      --dm:    #3a0000;
+      --glass: rgba(10,0,0,0.94);
+      --glow:  0 0 30px rgba(224,16,16,.4);
+      --card-border: rgba(224,16,16,0.15);
+    }
+
+    *, *::before, *::after {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--tx);
+      font-family: 'Outfit', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: #0a0000; }
+    ::-webkit-scrollbar-thumb { background: var(--rd2); border-radius: 4px; }
+
+    /* ── AMBIENT BG ── */
+    .ambient {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(224,16,16,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 100% 60%, rgba(224,16,16,0.07) 0%, transparent 60%),
+        #000;
+    }
+
+    /* ── PARTICLE DOTS ── */
+    .particles {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .dot {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: var(--rd);
+      border-radius: 50%;
+      opacity: 0;
+      animation: floatDot var(--dur, 8s) var(--delay, 0s) infinite ease-in-out;
+    }
+    @keyframes floatDot {
+      0%   { opacity: 0; transform: translateY(100vh) scale(0); }
+      20%  { opacity: 0.6; }
+      80%  { opacity: 0.3; }
+      100% { opacity: 0; transform: translateY(-20px) scale(1.5); }
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(0,0,0,0.92);
+      backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--card-border);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      animation: slideDown 0.6s ease forwards;
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to   { transform: translateY(0);    opacity: 1; }
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none;
+    }
+    .nav-logo-text {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      color: var(--tx);
+    }
+    .creator-tag {
+      font-size: 0.5rem;
+      background: var(--rd);
+      color: #fff;
+      padding: 3px 9px;
+      border-radius: 3px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .nav-back {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(224,16,16,0.1);
+      border: 1px solid rgba(224,16,16,0.3);
+      color: var(--rd);
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.25s, box-shadow 0.25s;
+    }
+    .nav-back:hover {
+      background: rgba(224,16,16,0.22);
+      box-shadow: 0 0 18px rgba(224,16,16,0.25);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      text-align: center;
+      padding: 72px 24px 56px;
+      animation: fadeUp 0.7s 0.2s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 72px; height: 72px;
+      background: rgba(224,16,16,0.1);
+      border: 1px solid rgba(224,16,16,0.35);
+      border-radius: 50%;
+      font-size: 1.8rem;
+      margin-bottom: 24px;
+      box-shadow: 0 0 40px rgba(224,16,16,0.2);
+      animation: pulse 2.5s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { box-shadow: 0 0 30px rgba(224,16,16,0.2); }
+      50%      { box-shadow: 0 0 55px rgba(224,16,16,0.45); }
+    }
+    .hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+    .hero h1 span { color: var(--rd); }
+    .hero-sub {
+      font-size: 0.85rem;
+      color: var(--mt);
+      letter-spacing: 0.06em;
+      max-width: 480px;
+      margin: 0 auto 22px;
+      line-height: 1.65;
+    }
+    .updated-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(224,16,16,0.08);
+      border: 1px solid rgba(224,16,16,0.25);
+      border-radius: 30px;
+      padding: 6px 16px;
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: var(--gl);
+      letter-spacing: 0.05em;
+    }
+    .updated-dot {
+      width: 6px; height: 6px;
+      background: var(--rd);
+      border-radius: 50%;
+      animation: blink 1.5s infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+    /* ── DIVIDER ── */
+    .divider {
+      width: 80px; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--rd), transparent);
+      margin: 0 auto 56px;
+      animation: fadeUp 0.7s 0.35s ease both;
+    }
+
+    /* ── MAIN CONTENT ── */
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ── SECTION CARDS ── */
+    .section-card {
+      background: var(--s1);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s;
+      animation: fadeUp 0.6s ease both;
+    }
+    .section-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 40px rgba(224,16,16,0.12);
+    }
+    .section-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(224,16,16,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .section-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 100%;
+      background: linear-gradient(to bottom, var(--rd), transparent);
+      border-radius: 20px 0 0 20px;
+    }
+
+    /* staggered animation delays */
+    .section-card:nth-child(1) { animation-delay: 0.1s; }
+    .section-card:nth-child(2) { animation-delay: 0.18s; }
+    .section-card:nth-child(3) { animation-delay: 0.26s; }
+    .section-card:nth-child(4) { animation-delay: 0.34s; }
+    .section-card:nth-child(5) { animation-delay: 0.42s; }
+    .section-card:nth-child(6) { animation-delay: 0.50s; }
+    .section-card:nth-child(7) { animation-delay: 0.58s; }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .card-icon {
+      width: 42px; height: 42px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(224,16,16,0.12);
+      border: 1px solid rgba(224,16,16,0.25);
+      border-radius: 10px;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .card-title {
+      font-size: 0.8rem;
+      font-weight: 900;
+      color: var(--rd);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+    .card-body {
+      font-size: 0.82rem;
+      color: var(--mt);
+      line-height: 1.82;
+    }
+    .card-body strong {
+      color: var(--tx);
+      font-weight: 800;
+    }
+    .card-body ul {
+      list-style: none;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .card-body ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .card-body ul li::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--rd);
+      border-radius: 50%;
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+    .highlight-box {
+      background: rgba(224,16,16,0.06);
+      border: 1px solid rgba(224,16,16,0.2);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-top: 14px;
+      font-size: 0.78rem;
+      color: var(--gl);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .highlight-box i { color: var(--rd); font-size: 0.9rem; }
+
+    /* ── CONTACT CARD ── */
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--rd), #c00000);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 10px;
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      margin-top: 16px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(224,16,16,0.3);
+    }
+    .contact-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(224,16,16,0.45);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      border-top: 1px solid var(--card-border);
+    }
+    .footer-logo {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      letter-spacing: 3px;
+      color: var(--tx);
+      margin-bottom: 8px;
+    }
+    .footer-logo span { color: var(--rd); }
+    .footer-sub {
+      font-size: 0.6rem;
+      color: var(--mt);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: var(--mt);
+      text-decoration: none;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--rd); }
+    .footer-copy {
+      margin-top: 18px;
+      font-size: 0.6rem;
+      color: #444;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .hero { padding: 48px 20px 40px; }
+      main { padding: 0 16px 60px; }
+      .section-card { padding: 22px 18px; }
+      .hero h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Background -->
+  <div class="ambient"></div>
+
+  <!-- Floating Particles -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <span class="nav-logo-text">SHOWCASE</span>
+      <span class="creator-tag">Kasier Mahamud</span>
+    </a>
+    <a href="javascript:history.back()" class="nav-back">
+      <i class="fa-solid fa-arrow-left"></i> Back
+    </a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-icon">
+      <i class="fa-solid fa-shield-halved" style="color: var(--rd);"></i>
+    </div>
+    <h1>Privacy <span>Policy</span></h1>
+    <p class="hero-sub">
+      Your privacy matters. This policy explains how Kasier Mahamud's Showcase app and
+      website handles your information — plainly and transparently.
+    </p>
+    <div class="updated-badge">
+      <div class="updated-dot"></div>
+      Last Updated: May 2025
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- 1. Overview -->
+    <div class="section-card">
+      <div class="card-header">
+        <div class="card-icon"><i class="fa-solid fa-circle-info" style="color:var(--rd)"></i></div>
+        <div class="card-title">Overview</div>
+      </div>
+      <div class="card-body">
+        <p>
+          Kasier Mahamud's Showcase is a <strong>personal portfolio application</strong> and website
+          designed to display professional video editing work and services.
+          We are committed to protecting your privacy.
+        </p>
+        <div class="highlight-box">
+          <i class="fa-solid fa-check-circle"></i>
+          We do <strong>not</strong> collect, store, or sell any personal data.
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Data Collection -->
+    <div class="section-card">
+      <div class="card-header">
+        <div class="card-icon"><i class="fa-solid fa-database" style="color:var(--rd)"></i></div>
+        <div class="card-title">Data Collection</div>
+      </div>
+      <div class="card-body">
+        <p>This app and website <strong>does not</strong>:</p>
+        <ul>
+          <li>Collect any personal information from users</li>
+          <li>Require account registration or login</li>
+          <li>Use cookies for tracking or advertising</li>
+          <li>Run any analytics or user-tracking services</li>
+          <li>Store any data on servers or third-party databases</li>
+          <li>Access your device's camera, microphone, or contacts</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3. External Links -->
+    <div class="section-card">
+      <div class="card-header">
+        <div class="card-icon"><i class="fa-solid fa-arrow-up-right-from-square" style="color:var(--rd)"></i></div>
+        <div class="card-title">External Links & Platforms</div>
+      </div>
+      <div class="card-body">
+        <p>
+          This app and website may contain links or redirect buttons to external platforms including:
+        </p>
+        <ul>
+          <li><strong>WhatsApp</strong> — for project inquiries via direct messaging</li>
+          <li><strong>Email</strong> — to send correspondence directly</li>
+          <li><strong>Facebook</strong> — to view the public profile page</li>
+        </ul>
+        <p style="margin-top: 14px;">
+          When you click these links, you are redirected to third-party platforms governed by their own
+          privacy policies. We are <strong>not responsible</strong> for the data practices of those platforms.
+          We recommend reviewing their respective privacy policies.
+        </p>
+      </div>
+    </div>
+
+    <!-- 4. Permissions -->
+    <div class="section-card">
+      <div class="card-header">
+        <div class="card-icon"><i class="fa-solid fa-lock" style="color:var(--rd)"></i></div>
+        <div class="card-title">App Permissions</div>
+      </div>
+      <div class="card-body">
+        <p>
+          The Android application only requests the <strong>minimum permissions</strong> required to function:
+        </p>
+        <ul>
+          <li><strong>Internet</strong> — to load fonts and external link resources</li>
+        </ul>
+        <p style="margin-top: 14px;">
+          No sensitive permissions (location, camera, storage, contacts, etc.) are requested.
+        </p>
+        <div class="highlight-box">
+          <i class="fa-solid fa-shield-halved"></i>
+          No ads, no tracking SDKs, no analytics libraries are embedded in the app.
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Children's Privacy -->
+    <div class="section-card">
+      <div class="card-header">
+        <div class="card-icon"><i class="fa-solid fa-child-reaching" style="color:var(--rd)"></i></div>
+        <div class="card-title">Children's Privacy</div>
+      </div>
+      <div class="card-body">
+        <p>
+          This app is a professional portfolio and is not directed at children under the age of 13.
+          Since we collect no personal data whatsoever, there is no risk of inadvertently collecting
+          information from minors.
+        </p>
+      </div>
+    </div>
+
+    <!-- 6. Changes to This Policy -->
+    <div class="section-card">
+      <div class="card-header">
+        <div class="card-icon"><i class="fa-solid fa-rotate" style="color:var(--rd)"></i></div>
+        <div class="card-title">Changes to This Policy</div>
+      </div>
+      <div class="card-body">
+        <p>
+          This privacy policy may be updated periodically to reflect changes in the app or legal requirements.
+          Any changes will be posted on this page with an updated "Last Updated" date.
+          Continued use of the app or website after any changes constitutes acceptance of the revised policy.
+        </p>
+        <p style="margin-top: 12px;">
+          <strong>Current Version:</strong> May 2025 — v1.0
+        </p>
+      </div>
+    </div>
+
+    <!-- 7. Contact -->
+    <div class="section-card">
+      <div class="card-header">
+        <div class="card-icon"><i class="fa-solid fa-envelope" style="color:var(--rd)"></i></div>
+        <div class="card-title">Contact Us</div>
+      </div>
+      <div class="card-body">
+        <p>
+          If you have any questions, concerns, or requests regarding this privacy policy,
+          please feel free to reach out directly:
+        </p>
+        <p style="margin-top: 12px;">
+          <strong>Name:</strong> Kasier Mahamud<br>
+          <strong>Email:</strong> kasiermahamud@gmail.com
+        </p>
+        <a href="https://mail.google.com/mail/?view=cm&to=kasiermahamud@gmail.com&su=Inquiry%20from%20Showcase%20Privacy%20Policy" target="_blank" class="contact-link">
+          <i class="fa-brands fa-google"></i> Open Gmail
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logo">KASIER <span>MAHAMUD</span></div>
+    <div class="footer-sub">Professional Video Editor</div>
+    <div class="footer-links">
+      <a href="https://mail.google.com/mail/?view=cm&to=kasiermahamud@gmail.com" target="_blank"><i class="fa-brands fa-google"></i> Gmail</a>
+      <a href="https://wa.me/8801953373693" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+      <a href="https://facebook.com/domainexpansion11" target="_blank"><i class="fa-brands fa-facebook"></i> Facebook</a>
+    </div>
+    <p class="footer-copy">&copy; 2025 Kasier Mahamud. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Generate floating particles
+    const container = document.getElementById('particles');
+    for (let i = 0; i < 28; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'dot';
+      dot.style.cssText = `
+        left: ${Math.random() * 100}%;
+        --dur: ${6 + Math.random() * 10}s;
+        --delay: ${Math.random() * 10}s;
+        width: ${1 + Math.random() * 2.5}px;
+        height: ${1 + Math.random() * 2.5}px;
+      `;
+      container.appendChild(dot);
+    }
+  </script>
+
+</body>
+</html>

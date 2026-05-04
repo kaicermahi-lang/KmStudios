@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>KM Studio | Contact</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+.contact-wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:50px;margin-top:50px}
+.cf{background:var(--s1);border:1px solid var(--border);border-radius:20px;padding:36px}
+@media(max-width:860px){.contact-wrap{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="page-header">
+  <div class="page-header-line"></div>
+  <div class="tag">Get In Touch</div>
+  <h1 class="ttl">Start Your Project</h1>
+  <p class="sub" style="margin:0 auto">Fill the form and we'll get back to you within 12 hours.</p>
+</div>
+
+<div class="section">
+  <div class="ctr">
+    <div class="contact-wrap">
+      <div class="cf reveal">
+        <div style="font-size:1rem;font-weight:700;margin-bottom:24px;color:var(--text)">Send Us a Message</div>
+        <div class="fg"><label>Your Name</label><input type="text" id="fn" placeholder="John Doe"></div>
+        <div class="fg"><label>Email Address</label><input type="email" id="fe" placeholder="john@example.com"></div>
+        <div class="fg"><label>Phone / WhatsApp (optional)</label><input type="text" id="fp" placeholder="+1 234 567 890"></div>
+        <div class="fg"><label>Service Needed</label>
+          <select id="fs">
+            <option value="">Select a service...</option>
+            <option>Video Editing</option><option>Color Grading</option>
+            <option>Motion Graphics</option><option>YouTube Production</option>
+            <option>Reels &amp; Shorts</option><option>Sound Design</option>
+            <option>Thumbnail Design</option><option>Custom Package</option>
+          </select>
+        </div>
+        <div class="fg"><label>Budget Range</label>
+          <select id="fb">
+            <option value="">Select budget...</option>
+            <option>Under $50</option><option>$50 - $150</option>
+            <option>$150 - $300</option><option>$300+</option>
+            <option>Let's discuss</option>
+          </select>
+        </div>
+        <div class="fg"><label>Message</label><textarea id="fm" rows="5" placeholder="Describe your project, deadline, and references..."></textarea></div>
+        <button class="btn btn-p" style="width:100%;justify-content:center;margin-top:4px" onclick="sendMsg()"><i class="fa-brands fa-google"></i> Send via Gmail</button>
+      </div>
+      <div class="reveal">
+        <div style="font-size:1rem;font-weight:700;margin-bottom:28px">Contact Information</div>
+        <div class="ci"><div class="cic"><i class="fa-brands fa-google"></i></div><div><div class="cil">Email</div><div class="civ"><a href="https://mail.google.com/mail/?view=cm&to=kasiermahamud@gmail.com" target="_blank">kasiermahamud@gmail.com</a></div></div></div>
+        <div class="ci"><div class="cic" style="background:rgba(37,211,102,.1);color:#25d366"><i class="fa-brands fa-whatsapp"></i></div><div><div class="cil">WhatsApp</div><div class="civ"><a href="https://wa.me/8801953373693" target="_blank">+880 195 337 3693</a></div></div></div>
+        <div class="ci"><div class="cic" style="background:rgba(24,119,242,.1);color:#1877f2"><i class="fa-brands fa-facebook"></i></div><div><div class="cil">Facebook</div><div class="civ"><a href="https://facebook.com/domainexpansion11" target="_blank">domainexpansion11</a></div></div></div>
+        <div class="ci"><div class="cic" style="background:rgba(245,158,11,.1);color:var(--gold)"><i class="fa-solid fa-clock"></i></div><div><div class="cil">Response Time</div><div class="civ">Within 12 Hours</div></div></div>
+        <div class="ci"><div class="cic" style="background:rgba(6,182,212,.1);color:var(--cyan)"><i class="fa-solid fa-location-dot"></i></div><div><div class="cil">Location</div><div class="civ">Bangladesh</div></div></div>
+        <div class="ci"><div class="cic" style="background:rgba(16,185,129,.1);color:#10b981"><i class="fa-solid fa-circle-check"></i></div><div><div class="cil">Status</div><div class="civ" style="color:#10b981">Open for Projects</div></div></div>
+        <div style="background:var(--s1);border:1px solid var(--border);border-radius:14px;padding:20px;margin-top:8px;text-align:center">
+          <div style="font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px">Also Reach Us On</div>
+          <div style="display:flex;gap:10px;justify-content:center">
+            <a href="https://mail.google.com/mail/?view=cm&to=kasiermahamud@gmail.com" target="_blank" class="btn btn-p" style="padding:10px 16px;font-size:.8rem"><i class="fa-brands fa-google"></i> Gmail</a>
+            <a href="https://wa.me/8801953373693" target="_blank" class="btn btn-o" style="padding:10px 16px;font-size:.8rem"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <a class="footer-logo" href="index.html">KM <span>Studio</span></a>
+  <div class="footer-links"><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a><a href="privacy-policy.html">Privacy</a></div>
+  <div class="footer-copy">&copy; 2026 Kasier Mahamud Studio</div>
+</footer>
+<script src="app.js"></script>
+<script>injectSidebar('contact');initReveal();</script>
+</body></html>
